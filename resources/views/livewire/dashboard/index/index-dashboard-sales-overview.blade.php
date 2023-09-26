@@ -1,4 +1,4 @@
 <div>
     {{-- The whole world belongs to you. --}}
-    sales
+    Sales Overview
 </div>
