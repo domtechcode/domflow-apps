@@ -31,7 +31,7 @@ class RedirectIfAuthenticated
 
                 // Redirect ke halaman dashboard berdasarkan peran
                 if ($roles->contains('Admin')) {
-                    return redirect()->route('admin.dashboard');
+                    return redirect()->route('dashboard-sales');
                 } elseif ($roles->contains('manager')) {
                     return redirect('/manager-dashboard');
                 } elseif ($roles->contains('user')) {

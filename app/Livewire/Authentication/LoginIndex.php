@@ -39,9 +39,7 @@ class LoginIndex extends Component
         if (Auth::attempt(['username' => $this->username, 'password' => $this->password])) {
             // Regenerasi sesi
             Session::regenerate();
-
-            // Jika berhasil, arahkan ke halaman yang sesuai
-            return redirect('/dashboard'); // Ganti '/dashboard' dengan rute yang sesuai
+            return redirect()->route('dashboard-sales');
         } else {
             session()->flash('login', 'Username atau password salah.');
             return back();
