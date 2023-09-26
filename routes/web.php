@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 use App\Livewire\Dashboard\Index\IndexDashboardSalesOverview;
 
 /*
@@ -19,3 +20,5 @@ use App\Livewire\Dashboard\Index\IndexDashboardSalesOverview;
 // });
 
 Route::get('/', IndexDashboardSalesOverview::class);
+
+Route::get('/test', [TestController::class, 'test']);

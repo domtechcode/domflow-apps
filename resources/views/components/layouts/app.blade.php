@@ -1798,5 +1798,21 @@
     <!-- Main JS -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
+    @vite('resources/js/app.js')
+      <script>
+        // setTimeout(() => {
+        //     window.Echo.channel('testing')
+        //     .listen('.MyWebSocket', (e) => {
+        //         console.log(e);
+        //     })
+        // }, 200);
+
+        setTimeout(() => {
+            window.Echo.private('privateChanne.user.{{ Auth::id() }}')
+            .listen('.private_msg', (e) => {
+                console.log(e);
+            })
+        }, 200);
+      </script>
     </body>
 </html>
