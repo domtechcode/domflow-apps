@@ -20,11 +20,37 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
+            // if (Auth::guard($guard)->check()) {
+            //     return redirect(RouteServiceProvider::HOME);
+            // }
+
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                // Ambil peran pengguna menggunakan Spatie Permission
+                $user = Auth::user();
+                $roles = $user->getRoleNames(); // Mendapatkan semua peran pengguna
+
+                // Redirect ke halaman dashboard berdasarkan peran
+                if ($roles->contains('Admin')) {
+                    return redirect()->route('admin.dashboard');
+                } elseif ($roles->contains('manager')) {
+                    return redirect('/manager-dashboard');
+                } elseif ($roles->contains('user')) {
+                    return redirect('/user-dashboard');
+                }
+                // Tambahkan peran lain jika diperlukan
             }
         }
 
         return $next($request);
+
+        // $guards = empty($guards) ? [null] : $guards;
+
+        // foreach ($guards as $guard) {
+        //     if (Auth::guard($guard)->check()) {
+        //         return redirect(RouteServiceProvider::HOME);
+        //     }
+        // }
+
+        // return $next($request);
     }
 }
