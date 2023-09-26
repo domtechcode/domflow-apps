@@ -10,7 +10,7 @@ class LoginIndex extends Component
 {
     public function render()
     {
-        return view('livewire.authentication.login-index')->layout('app-base'); ;
+        return view('livewire.authentication.login-index')->layout('app-base')->title('Login | Domflow - Apps');;
     }
 
     public $username;
@@ -44,11 +44,5 @@ class LoginIndex extends Component
             session()->flash('login', 'Username atau password salah.');
             return back();
         }
-    }
-
-    public function logout()
-    {
-        Auth::logout();
-        return redirect('/');
     }
 }

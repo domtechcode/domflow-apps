@@ -1,4 +1,6 @@
-<!-- Footer -->
+<div>
+    {{-- If your happiness depends on money, you will never be happy with yourself. --}}
+    <!-- Footer -->
 <footer class="content-footer footer bg-footer-theme">
     <div class="container-xxl">
       <div
@@ -33,3 +35,5 @@
     </div>
   </footer>
   <!-- / Footer -->
+
+</div>

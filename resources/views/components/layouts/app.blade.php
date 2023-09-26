@@ -46,13 +46,15 @@
     <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
         <div class="layout-container">
 
-            @include('components.section.navbar')
+            @livewire('section.nav-bar')
+            {{-- @include('components.section.navbar') --}}
 
           <!-- Layout container -->
           <div class="layout-page">
             <!-- Content wrapper -->
             <div class="content-wrapper">
-                @include('components.section.menu')
+                @livewire('section.menu-bar')
+                {{-- @include('components.section.menu') --}}
 
               <!-- Content -->
 
@@ -61,8 +63,8 @@
               </div>
               <!--/ Content -->
 
-              @include('components.section.footer')
-
+              {{-- @include('components.section.footer') --}}
+              @livewire('section.footer')
 
               <div class="content-backdrop fade"></div>
             </div>
@@ -109,19 +111,19 @@
 
     @vite('resources/js/app.js')
       <script>
-        // setTimeout(() => {
-        //     window.Echo.channel('testing')
-        //     .listen('.MyWebSocket', (e) => {
-        //         console.log(e);
-        //     })
-        // }, 200);
-
         setTimeout(() => {
-            window.Echo.private('privateChanne.user.{{ Auth::id() }}')
-            .listen('.private_msg', (e) => {
+            window.Echo.channel('testing')
+            .listen('.MyWebSocket', (e) => {
                 console.log(e);
             })
         }, 200);
+
+        // setTimeout(() => {
+        //     window.Echo.private('privateChannel.user.{{ Auth::id() }}')
+        //     .listen('.private_msg', (e) => {
+        //         console.log(e);
+        //     })
+        // }, 200);
       </script>
     </body>
 </html>

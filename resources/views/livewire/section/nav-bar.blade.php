@@ -1,4 +1,6 @@
-<!-- Navbar -->
+<div>
+    {{-- To attain knowledge, add things every day; To attain wisdom, subtract things every day. --}}
+    <!-- Navbar -->
 
 <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
     <div class="container-xxl">
@@ -30,7 +32,7 @@
                 fill="#7367F0" />
             </svg>
           </span>
-          <span class="app-brand-text demo menu-text fw-bold">Vuexy</span>
+          <span class="app-brand-text demo menu-text fw-bold">Domflow</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
@@ -46,43 +48,6 @@
 
       <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <ul class="navbar-nav flex-row align-items-center ms-auto">
-          <!-- Language -->
-          <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
-            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-              <i class="ti ti-language rounded-circle ti-md"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);" data-language="en">
-                  <span class="align-middle">English</span>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);" data-language="fr">
-                  <span class="align-middle">French</span>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);" data-language="de">
-                  <span class="align-middle">German</span>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);" data-language="pt">
-                  <span class="align-middle">Portuguese</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <!--/ Language -->
-
-          <!-- Search -->
-          <li class="nav-item navbar-search-wrapper me-2 me-xl-0">
-            <a class="nav-link search-toggler" href="javascript:void(0);">
-              <i class="ti ti-search ti-md"></i>
-            </a>
-          </li>
-          <!-- /Search -->
 
           <!-- Quick links  -->
           <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
@@ -439,8 +404,8 @@
                       </div>
                     </div>
                     <div class="flex-grow-1">
-                      <span class="fw-medium d-block">John Doe</span>
-                      <small class="text-muted">Admin</small>
+                      <span class="fw-medium d-block">{{ Auth::user()->name }}</span>
+                      <small class="text-muted">{{ Auth::user()->roles->pluck('name')[0] }}</small>
                     </div>
                   </div>
                 </a>
@@ -461,39 +426,13 @@
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="pages-account-settings-billing.html">
-                  <span class="d-flex align-items-center align-middle">
-                    <i class="flex-shrink-0 ti ti-credit-card me-2 ti-sm"></i>
-                    <span class="flex-grow-1 align-middle">Billing</span>
-                    <span class="flex-shrink-0 badge badge-center rounded-pill bg-label-danger w-px-20 h-px-20"
-                      >2</span
-                    >
-                  </span>
-                </a>
-              </li>
-              <li>
                 <div class="dropdown-divider"></div>
               </li>
               <li>
-                <a class="dropdown-item" href="pages-faq.html">
-                  <i class="ti ti-help me-2 ti-sm"></i>
-                  <span class="align-middle">FAQ</span>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="pages-pricing.html">
-                  <i class="ti ti-currency-dollar me-2 ti-sm"></i>
-                  <span class="align-middle">Pricing</span>
-                </a>
-              </li>
-              <li>
-                <div class="dropdown-divider"></div>
-              </li>
-              <li>
-                <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                <button class="dropdown-item" wire:click.prevent='logout'>
                   <i class="ti ti-logout me-2 ti-sm"></i>
                   <span class="align-middle">Log Out</span>
-                </a>
+                </button>
               </li>
             </ul>
           </li>
@@ -501,16 +440,9 @@
         </ul>
       </div>
 
-      <!-- Search Small Screens -->
-      <div class="navbar-search-wrapper search-input-wrapper container-xxl d-none">
-        <input
-          type="text"
-          class="form-control search-input border-0"
-          placeholder="Search..."
-          aria-label="Search..." />
-        <i class="ti ti-x ti-sm search-toggler cursor-pointer"></i>
-      </div>
     </div>
   </nav>
 
   <!-- / Navbar -->
+
+</div>
