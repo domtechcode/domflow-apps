@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\LogoutController;
 use App\Livewire\Authentication\LoginIndex;
+use App\Livewire\Contacts\Index\IndexSuppliers;
 use App\Livewire\Dashboard\Index\IndexDashboardSalesOverview;
 use App\Livewire\Dashboard\Index\IndexDashboardPurchaseOverview;
 use App\Livewire\Dashboard\Index\IndexDashboardInventoryOverview;
@@ -28,9 +29,13 @@ Route::middleware(['guest'])->group(function () {
   });
 
   Route::middleware(['auth', 'role:Admin'])->prefix('admin')->group(function () {
+    //dashboard
     Route::get('/dashboard-sales', IndexDashboardSalesOverview::class)->name('dashboard-sales');
     Route::get('/dashboard-purchase', IndexDashboardPurchaseOverview::class)->name('dashboard-purchase');
     Route::get('/dashboard-inventory', IndexDashboardInventoryOverview::class)->name('dashboard-inventory');
+
+    //contact
+    Route::get('/contacts-suppliers', IndexSuppliers::class)->name('contacts-suppliers');
   });
 
 // Route::get('/', IndexDashboardSalesOverview::class);

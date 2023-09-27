@@ -205,14 +205,14 @@
             </li>
 
             <!-- Contacts -->
-            <li class="menu-item">
+            <li class="menu-item @if(Route::is('contacts-suppliers') || Route::is('contacts-suppliers')) active @endif">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-address-book"></i>
                     <div data-i18n="Contacts">Contacts</div>
                 </a>
                 <ul class="menu-sub">
-                    <li class="menu-item">
-                        <a href="form-validation.html" class="menu-link">
+                    <li class="menu-item {{ Route::is('contacts-suppliers') ? 'active' : '' }}">
+                        <a href="{{ route('contacts-suppliers') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-users-group"></i>
                             <div data-i18n="Suppliers">Suppliers</div>
                         </a>
