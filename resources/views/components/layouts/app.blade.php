@@ -46,15 +46,13 @@
     <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
         <div class="layout-container">
 
-            @livewire('section.nav-bar')
-            {{-- @include('components.section.navbar') --}}
+            @include('components.section.navbar')
 
           <!-- Layout container -->
           <div class="layout-page">
             <!-- Content wrapper -->
             <div class="content-wrapper">
-                @livewire('section.menu-bar')
-                {{-- @include('components.section.menu') --}}
+                @include('components.section.menu')
 
               <!-- Content -->
 
@@ -63,8 +61,7 @@
               </div>
               <!--/ Content -->
 
-              {{-- @include('components.section.footer') --}}
-              @livewire('section.footer')
+              @include('components.section.footer')
 
               <div class="content-backdrop fade"></div>
             </div>
