@@ -11,17 +11,18 @@
             <div class="row">
                 <div class="col-sm-12 col-md-1 mb-2">
                     <select class="form-select" aria-label="5">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
                     </select>
                 </div>
                 <div class="col-sm-12 col-md-11">
                     <div class="d-flex align-items-center justify-content-md-end justify-content-center flex-wrap me-1">
-                        <div class="d-flex align-items-start align-items-sm-center mb-2">
+                        {{-- <div class="d-flex align-items-start align-items-sm-center mb-2">
                             <div class="button-wrapper">
-                              <label for="upload" class="btn btn-success me-2" tabindex="0">
-                                    <span class="ti-xs ti ti-upload me-1"></span>Import
+                              <label for="upload" class="btn btn-info me-2" tabindex="0">
+                                    <span class="ti-xs ti ti-file-import me-1"></span>Import
 
                                 <input
                                   type="file"
@@ -31,7 +32,54 @@
                                   accept="image/png, image/jpeg" />
                               </label>
                             </div>
-                          </div>
+                          </div> --}}
+                        {{-- <div class="d-flex align-items-start align-items-sm-center mb-2">
+                            <div class="button-wrapper">
+                              <label for="upload" class="btn btn-success me-2" tabindex="0">
+                                    <span class="ti-xs ti ti-file-export me-1"></span>Export
+
+                                <input
+                                  type="file"
+                                  id="upload"
+                                  class="account-file-input"
+                                  hidden
+                                  accept="image/png, image/jpeg" />
+                              </label>
+                            </div>
+                          </div> --}}
+                        <div class="d-flex align-items-start align-items-sm-center mb-2">
+                            <div class="btn-group me-2" id="dropdown-icon-demo">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="ti ti-filter ti-xs"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
+                                                class="ti ti-chevron-right scaleX-n1-rtl"></i>Action</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
+                                                class="ti ti-chevron-right scaleX-n1-rtl"></i>Another action</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
+                                                class="ti ti-chevron-right scaleX-n1-rtl"></i>Something else here</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
+                                                class="ti-xs ti ti-file-import me-1 scaleX-n1-rtl"></i>Import</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
+                                                class="ti-xs ti ti-file-export me-1 scaleX-n1-rtl"></i>Export</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="d-flex align-items-start align-items-sm-center mb-2">
                             <div class="input-group input-group-merge">
                                 <span class="input-group-text" id="basic-addon-search31"><i
@@ -39,7 +87,7 @@
                                 <input type="text" class="form-control" placeholder="Search..."
                                     aria-label="Search..." aria-describedby="basic-addon-search31" />
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </div>
             </div>

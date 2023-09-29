@@ -8,6 +8,6 @@ class IndexSuppliers extends Component
 {
     public function render()
     {
-        return view('livewire.contacts.index.index-suppliers');
+        return view('livewire.contacts.index.index-suppliers')->title('Suppliers | Domflow - Apps');
     }
 }
