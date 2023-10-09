@@ -399,10 +399,13 @@
                             <div class="dropdown-divider"></div>
                         </li>
                         <li>
-                            <button class="dropdown-item" wire:click.prevent='logout'>
+                            <form action="/logout" method="POST">
+                                @csrf
+                            <button class="dropdown-item">
                                 <i class="ti ti-logout me-2 ti-sm"></i>
                                 <span class="align-middle">Log Out</span>
                             </button>
+                        </form>
                         </li>
                     </ul>
                 </li>

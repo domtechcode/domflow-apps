@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
-use App\Http\Controllers\LogoutController;
 use App\Livewire\Authentication\LoginIndex;
 use App\Livewire\Contacts\Index\IndexSuppliers;
+use App\Http\Controllers\Authentication\LogoutController;
 use App\Livewire\Dashboard\Index\IndexDashboardSalesOverview;
 use App\Livewire\Dashboard\Index\IndexDashboardPurchaseOverview;
 use App\Livewire\Dashboard\Index\IndexDashboardInventoryOverview;
@@ -27,6 +27,8 @@ use App\Livewire\Dashboard\Index\IndexDashboardInventoryOverview;
 Route::middleware(['guest'])->group(function () {
     Route::get('/', LoginIndex::class)->name('login');
   });
+
+  Route::post('/logout', [LogoutController::class, 'logout']);
 
   Route::middleware(['auth', 'role:Admin'])->prefix('admin')->group(function () {
     //dashboard
