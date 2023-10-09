@@ -7,6 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ $title ?? '| Domflow - Apps' }}</title>
 
@@ -39,6 +40,8 @@
         <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
         <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
         <script src="{{ asset('assets/js/config.js') }}"></script>
+        @livewireStyles
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
 
@@ -91,6 +94,7 @@
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
 
+
     <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
     <script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
@@ -104,9 +108,10 @@
     <!-- Vendors JS -->
 
     <!-- Main JS -->
+
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
-    @vite('resources/js/app.js')
+    @livewireScripts
       <script>
         setTimeout(() => {
             window.Echo.channel('testing')

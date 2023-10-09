@@ -5,7 +5,7 @@
             <div>
                 ©
                 <script>
-                    document.write(new Date().getFullYear());
+                    // document.write(new Date().getFullYear());
                 </script>
                 , made with ❤️ by <a href="https://pixinvent.com" target="_blank" class="fw-medium">Pixinvent</a>
             </div>
