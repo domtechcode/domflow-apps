@@ -3,9 +3,13 @@
 namespace App\Livewire\Contacts\Index;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class IndexSuppliers extends Component
 {
+    use WithFileUploads;
+
+    public $fileImport;
     public function render()
     {
         return view('livewire.contacts.index.index-suppliers')->title('Suppliers | Domflow - Apps');

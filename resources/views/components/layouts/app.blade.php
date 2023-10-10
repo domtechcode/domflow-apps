@@ -41,6 +41,7 @@
         <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
         <script src="{{ asset('assets/js/config.js') }}"></script>
         @livewireStyles
+        @stack('styles')
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
@@ -112,6 +113,7 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
     @livewireScripts
+    @stack('scripts')
       <script>
         setTimeout(() => {
             window.Echo.channel('testing')
