@@ -55,27 +55,19 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
-                                                class="ti ti-chevron-right scaleX-n1-rtl"></i>Action</a>
+                                        <button href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
+                                                class="ti-xs ti ti-file-import me-1 scaleX-n1-rtl"></i>Import</button>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
-                                                class="ti ti-chevron-right scaleX-n1-rtl"></i>Another action</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
-                                                class="ti ti-chevron-right scaleX-n1-rtl"></i>Something else here</a>
+                                        <button wire:click="downloadTemplate" class="dropdown-item d-flex align-items-center"><i
+                                                class="ti-xs ti ti-file-download me-1 scaleX-n1-rtl"></i>Download Template</button>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider" />
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
-                                                class="ti-xs ti ti-file-import me-1 scaleX-n1-rtl"></i>Import</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
-                                                class="ti-xs ti ti-file-export me-1 scaleX-n1-rtl"></i>Export</a>
+                                        <button href="javascript:void(0);" class="dropdown-item d-flex align-items-center"><i
+                                                class="ti-xs ti ti-file-export me-1 scaleX-n1-rtl"></i>Export</button>
                                     </li>
                                 </ul>
                             </div>
