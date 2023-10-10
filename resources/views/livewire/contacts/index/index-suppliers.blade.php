@@ -85,6 +85,15 @@
             </div>
         </div>
 
+        <x-forms.filepond
+                                                            wire:model="fileImport"
+                                                            allowFileTypeValidation allowFileSizeValidation
+                                                            acceptedFileTypes="['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel']"
+                                                            maxFileSize="1024mb" />
+
+                                                        {{-- @error('keterangans.' . $keteranganIndex . '.fileRincian')
+                                                            <p class="mt-2 text-sm text-danger">{{ $message }}</p>
+                                                        @enderror --}}
 
         <div class="table-responsive text-nowrap">
             <table class="table table-hover">
